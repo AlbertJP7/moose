@@ -146,6 +146,8 @@ using ElemSideQpArg = std::tuple<const libMesh::Elem *, unsigned int, unsigned i
  * equivalent); a state of 1 indicates the most-recent "old" time or the most recent previous
  * nonlinear iteration, etc.
  */
+ using NodeArg = const Node*;
+ 
 struct StateArg
 {
   /**

@@ -156,6 +156,7 @@ private:
   using ElemSideQpArg = Moose::ElemSideQpArg;
   using FaceArg = Moose::FaceArg;
   using ElemPointArg = Moose::ElemPointArg;
+  using NodeArg = Moose::NodeArg;
 
   ValueType evaluate(const ElemArg & elem, const Moose::StateArg & state) const override final;
   ValueType evaluate(const FaceArg & face, const Moose::StateArg & state) const override final;
@@ -164,6 +165,7 @@ private:
                      const Moose::StateArg & state) const override final;
   ValueType evaluate(const ElemPointArg & elem_point,
                      const Moose::StateArg & state) const override final;
+  ValueType evaluate(const NodeArg & node, const Moose::StateArg & state) const override final;
 
   GradientType evaluateGradient(const ElemArg & elem,
                                 const Moose::StateArg & state) const override final;
@@ -175,6 +177,8 @@ private:
                                 const Moose::StateArg & state) const override final;
   GradientType evaluateGradient(const ElemPointArg & elem_point,
                                 const Moose::StateArg & state) const override final;
+  GradientType evaluateGradient(const NodeArg & node,
+                                const Moose::StateArg & state) const override final;
 
   DotType evaluateDot(const ElemArg & elem, const Moose::StateArg & state) const override final;
   DotType evaluateDot(const FaceArg & face, const Moose::StateArg & state) const override final;
@@ -183,6 +187,7 @@ private:
                       const Moose::StateArg & state) const override final;
   DotType evaluateDot(const ElemPointArg & elem_point,
                       const Moose::StateArg & state) const override final;
+  DotType evaluateDot(const NodeArg & node, const Moose::StateArg & state) const override final;
 
   /**
    * Compute \p _current_elem_qp_functor_xyz if we are on a new element
